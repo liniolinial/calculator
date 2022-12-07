@@ -1,0 +1,133 @@
+body {
+  background-color: #393e46;
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+img {
+  width: 80%;
+}
+h1 {
+  margin: 30px;
+  font-family: "Lobster", cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 8rem;
+  color: #4ecca3;
+}
+h4 {
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+.display,
+.display2 {
+  text-align: right;
+  display: block;
+  width: -webkit-fill-available;
+}
+.display {
+  // font-size: 23px;
+  font-size: 50px;
+  padding: 20px 5px;
+}
+.display2 {
+  font-size: 70px;
+}
+
+p,
+.ex {
+  font-size: 2rem;
+  color: #4ecca3;
+  font-family: "Indie Flower", cursive;
+  text-decoration: none;
+  margin: 0;
+}
+
+.ex:hover {
+  color: #d5f8ec;
+  font-weight: bold;
+}
+
+.img-pepe {
+  border-radius: 50%;
+  width: 210px;
+  height: 200px;
+  display: block;
+  margin: auto;
+}
+.start-btn {
+  display: block;
+  margin: auto;
+  padding: 0.5rem 2rem;
+  font-family: "Indie Flower", cursive;
+  font-size: 2rem;
+  border-radius: 5px;
+  border-style: none;
+  background-color: rgb(235, 235, 226);
+  &:hover {
+    background-color: darken($color: rgb(235, 235, 226), $amount: 20);
+  }
+}
+.background-calc {
+  background-color: darken($color: white, $amount: 22);
+  width: 35%;
+  margin: auto;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+.grid-calc {
+  width: 100%;
+  gap: 0.2rem;
+}
+
+.grid-btn {
+  padding-bottom: 0.2rem;
+}
+
+.calc-btn {
+  height: 5rem;
+  width: 24%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-style: hidden;
+  background-color: white;
+  &:hover {
+    background-color: darken($color: white, $amount: 40);
+  }
+}
+.operator,
+.btnClear {
+  background-color: darken($color: white, $amount: 15);
+}
+.calculator {
+  background-color: rgb(133, 181, 229);
+  &:hover {
+    background-color: rgb(51, 143, 241);
+  }
+}
+
+.calc-btn.pressed {
+  background-color: rgba(78, 71, 71, 0.863);
+}
+.calculator.pressed {
+  background-color: rgb(40, 117, 199);
+}
+.pepe-div {
+  margin-top: 80px;
+}
+footer {
+  margin-top: 5%;
+  color: #eeeeee;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+}

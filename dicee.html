@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dicee</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+  <script defer src="index.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Refresh Me</h1>
+    <div class="dice">
+      <p>Player 1</p>
+      <img src="images/dice6.png">
+    </div>
+
+    <div class="dice">
+      <p>Player 2</p>
+      <img src="images/dice6.png">
+    </div>
+    <button class="start-btn" onclick="start()">Start</button>
+
+
+    <h1>mini Calculator</h1>
+    <div class="background-calc">
+      <h4>🌀Standard Calculator</h4>
+      <div class="display">
+        <div class="display__operation"></div>
+        <div class="display__result"></div>
+      </div>
+      <!-- <input type="text" class="display2" value="" disabled> -->
+      <div class="grid-calc">
+        <div class="grid-btn">
+          <button class="calc-btn btnClear">AC</button>
+          <button class="calc-btn operator">%</button>
+          <button class="calc-btn operator">/</button>
+          <button class="calc-btn btnClear">DEL</button>
+        </div>
+
+        <div class="grid-btn">
+          <button class="calc-btn num">7</button>
+          <button class="calc-btn num">8</button>
+          <button class="calc-btn num">9</button>
+          <button class="calc-btn operator">*</button>
+        </div>
+
+        <div class="grid-btn">
+          <button class="calc-btn num">4</button>
+          <button class="calc-btn num">5</button>
+          <button class="calc-btn num">6</button>
+          <button class="calc-btn operator">-</button>
+        </div>
+
+        <div class="grid-btn">
+          <button class="calc-btn num">1</button>
+          <button class="calc-btn num">2</button>
+          <button class="calc-btn num">3</button>
+          <button class="calc-btn operator">+</button>
+        </div>
+
+        <div class="grid-btn">
+          <button id="btnMinus" class="calc-btn">x</button>
+          <button class="calc-btn num">0</button>
+          <button class="calc-btn decimal">.</button>
+          <button class="calc-btn result">=</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="pepe-div">
+      <!-- Pepe -->
+      <a href="https://www.google.com/search?q=angry+pepe&rlz=1C1GCEU_deDE1016DE1016&ei=X9B8Y97wEqeG9u8P25Go2AM&ved=0ahUKEwienImU9MH7AhUng_0HHdsICjsQ4dUDCBA&uact=5&oq=angry+pepe&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBQgAEIAEMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgQIABAeMgYIABAeEAoyBAgAEB4yBAgAEB4yBggAEB4QCjoECAAQQzoHCAAQsQMQQzoHCAAQgAQQCjoQCC4QgAQQsQMQgwEQ1AIQDToNCC4QgAQQxwEQrwEQDToNCC4QgAQQsQMQ1AIQDToQCC4QgAQQsQMQxwEQ0QMQDToNCC4Q1AIQsQMQgAQQDToKCC4QgAQQsQMQDToHCAAQgAQQDToKCAAQgAQQsQMQDToICAAQBxAeEAo6BggAEB4QDToICAAQHhANEApKBAhBGABKBAhGGABQAFioDmCWF2gBcAF4AIABbogB4QSSAQM1LjKYAQCgAQHAAQE&sclient=gws-wiz-serp"
+        class="ex" onclick="pepe()">I love JavaScript (Click)</a>
+      <img class="img-pepe" src="images/pepe1.jpg">
+      <p class="ex" onclick="imageChange()">It doesn't work</p>
+      <p id="exit"></p>
+      <p class="ex"></p>
+      <p class="ex"></p>
+      <p class="ex"></p>
+      <p class="ex"></p>
+    </div>
+
+
+    <footer>
+      www 🎲 Dice 🎲 com
+    </footer>
+</body>
+
+</html>
