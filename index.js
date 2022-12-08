@@ -1,25 +1,3 @@
-//Dice Project
-function start() {
-        var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-        var randomImageSource = "images/dice" + randomNumber1 + ".png";
-        document.querySelectorAll("img")[0].setAttribute("src", randomImageSource);
-
-        var randomNumber2 = Math.floor(Math.random() * 6) + 1;
-
-        var randomImageSource2 = "images/dice" + randomNumber2 + ".png";
-        document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
-
-        if (randomNumber1 > randomNumber2) {
-                document.querySelector("h1").innerHTML = "🚩Player 1 Wins";
-        }
-        else if (randomNumber1 < randomNumber2) {
-                document.querySelector("h1").innerHTML = "Player 2 Wins🚩";
-        }
-        else {
-                document.querySelector("h1").innerHTML = "Draw!";
-        }
-}
-//////////////////////////////////////////////////////////////////////
 const display = document.querySelector(".display");
 const displayOperation = display.querySelector(".display__operation");
 const displayResult = display.querySelector(".display__result");
@@ -28,6 +6,7 @@ let result = '';
 
 //Calculator buttonHover, click
 var buttons = document.querySelectorAll(".calc-btn");
+console.log("buttons", buttons);
 buttons.forEach(button => {
         button.addEventListener("click", function(event) {
                 buttonAnimation(event); 
@@ -55,14 +34,20 @@ function buttonPress(event){
         }
         if(event.target.classList.contains("btnClear")){
                 operation = '';
+                result = '';
                 return;
         }
-        if(event.target.classList.contains("result")){
+        if(event.target.classList.contains("result")){  //wenn multi (statt result) -> dann operator + oder -, hier weiter if condition oder so usw..
                 operation = new Function(`return ${operation}`)(result);
                 result = operation;
                 return;
         }
-        operation += event.target.innerText;
+        if(event.target.classList.contains("multiply")){
+                operation += '*';
+                console.log(operation); //auch für % rechnen 
+                return;
+        }
+        operation += event.target.innerText; //
         console.log(operation);
 }
 
@@ -104,51 +89,6 @@ function updateDisplay(){
 //         }
 //         else {
 //                 result = "error"
-//         }  //ohne else funktioniert das nicht. Daher irgendetwas hier zu schreiben.
+//         } 
 //         return result;
 // }
-
-
-// function clickZero() {
-//         const toZero = document.getElementsByClassName("display");
-//         toZero.remove();
-//         document.getElementsByClassName("display").setAttribute("", result);
-// }
-
-// document.getElementsByClassName("num")[0].addEventListener("click", calculate);
-// function calculate() {
-//         // var num = document.querySelectorAll('.num');
-//         document.getElementsByClassName("display").innerHTML = "1";
-// }
-
-// xxxx
-// function myRechner(event){
-//         var num = event.target;
-//         document.getElementsByClassName("display").innerHTML = x.querySelector;
-// }
-// function calculate(){
-//         const one = 1;
-// document.getElementById("display").innerHTML = one;
-// }
-
-
-
-////////////////////////////////7
-function pepe() {
-        document.getElementsByClassName("ex")[0].innerHTML = "No, I don't.";
-        document.getElementsByClassName("ex")[0].style.color = "white";
-}
-function imageChange() {
-        var randomNumber3 = Math.floor(Math.random() * 5) + 1;
-        var randomPepeSource = "images/pepe" + randomNumber3 + ".jpg";
-        document.querySelector(".img-pepe").setAttribute("src", randomPepeSource);
-        const frog = {
-                firstName: "Pepe",
-                lastName: "Navaero",
-                id: "ID: pepe7018",
-                fullName: function () {
-                        return this.firstName + " " + this.lastName + " " + this.id;
-                }
-        };
-        document.getElementsByClassName("ex")[2].innerHTML = frog.fullName();
-}
