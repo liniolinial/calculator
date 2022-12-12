@@ -1,16 +1,15 @@
 const display = document.querySelector(".display");
 const displayOperation = display.querySelector(".display__operation");
 const displayResult = display.querySelector(".display__result");
-let operation = {
-        // Content which is getting displayed in display
-        display: '',
-        // Actual calculation
-        calculation: ''
-};
+let operation = ''
+
+// var operators = document.getElementsByClassName('operator');
+
+
 let result = '';
-var coma = ',';
-var multiple = 'x';
-var division = '÷';
+// var coma = ',';
+// var multiple = 'x';
+// var division = '÷';
 
 //Calculator buttonHover, click
 var buttons = document.querySelectorAll(".calc-btn");
@@ -44,9 +43,9 @@ function buttonPress(event){
                 return;
         }
         if(event.target.classList.contains("multiply")){
-                // operation += '*';
-                multiple = multiple.replace('x', '*');
-                operation += multiple;
+                operation += '*';
+                // multiple = multiple.replace('x', '*');
+                // operation += multiple;
                 console.log(operation);
                 return;
         }
@@ -68,7 +67,7 @@ function buttonPress(event){
         }
         if(event.target.classList.contains("result")){
                 // operation = new Function(`return ${operation}`)(result);
-                operation = new Function(`return ${operation.calculation}`)(result);
+                operation = new Function(`return ${operation}`)(result);
                 result = operation;
                 return;
         }
@@ -77,6 +76,6 @@ function buttonPress(event){
 }
 //display update-show window
 function updateDisplay(){ 
-        displayOperation.innerText = operation.display; 
+        displayOperation.innerText = operation; 
         displayResult.innerText = result;
 }
