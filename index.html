@@ -2,9 +2,9 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-16">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dicee</title>
+  <title>Mini Calculator</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
 </head>
@@ -19,17 +19,17 @@
     </div>
     <div class="grid-calc">
       <div class="grid-btn">
-        <button class="calc-btn btnClear">AC</button>
-        <button class="calc-btn operator">%</button>
-        <button class="calc-btn operator">/</button>
-        <button class="calc-btn btnClear">DEL</button>
+        <button class="calc-btn btnClear AC">AC</button>
+        <button class="calc-btn operator percent">%</button>
+        <button class="calc-btn operator division">÷</button>
+        <button class="calc-btn btnClear delete">DEL</button>
       </div>
 
       <div class="grid-btn">
         <button class="calc-btn num">7</button>
         <button class="calc-btn num">8</button>
         <button class="calc-btn num">9</button>
-        <button class="calc-btn operator multiply">*</button>
+        <button class="calc-btn operator multiply" data-value="*">x</button>
       </div>
 
       <div class="grid-btn">
@@ -47,9 +47,9 @@
       </div>
 
       <div class="grid-btn">
-        <button id="btnMinus" class="calc-btn">x</button>
+        <button id="btnMinus" class="calc-btn plusminus">x</button>
         <button class="calc-btn num">0</button>
-        <button class="calc-btn decimal">.</button>
+        <button class="calc-btn decimal ">,</button>
         <button class="calc-btn result">=</button>
       </div>
     </div>

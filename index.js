@@ -1,94 +1,82 @@
 const display = document.querySelector(".display");
 const displayOperation = display.querySelector(".display__operation");
 const displayResult = display.querySelector(".display__result");
-let operation = '';
+let operation = {
+        // Content which is getting displayed in display
+        display: '',
+        // Actual calculation
+        calculation: ''
+};
 let result = '';
+var coma = ',';
+var multiple = 'x';
+var division = '÷';
 
 //Calculator buttonHover, click
 var buttons = document.querySelectorAll(".calc-btn");
 console.log("buttons", buttons);
 buttons.forEach(button => {
         button.addEventListener("click", function(event) {
-                buttonAnimation(event); 
                 buttonPress(event);
                 updateDisplay();
         });
 })
 
 //keyboard Press-> noch nicht
-// document.addEventListener("keydown", function(event){
-//         buttonAnimation(event.target);
+// document.addEventListener("keydown", function(ev){
+//         buttonAnimation(ev.target);
 //     });
 
-function buttonAnimation(event){
-        event.target.classList.add("pressed");
-        
-        setTimeout(function(){
-                event.target.classList.remove("pressed");
-        }, 50);
-}
-
+//button click
 function buttonPress(event){
+        // let coma = operation.toLocalString("de-DE");
         if (!event.target.matches("button")){
                 return;
         }
-        if(event.target.classList.contains("btnClear")){
+        if(event.target.classList.contains("AC")){
                 operation = '';
                 result = '';
                 return;
         }
-        if(event.target.classList.contains("result")){  //wenn multi (statt result) -> dann operator + oder -, hier weiter if condition oder so usw..
-                operation = new Function(`return ${operation}`)(result);
-                result = operation;
+        if(event.target.classList.contains("delete")){
+                operation = operation.substr(0, operation.length-1);
+                result = '';
                 return;
         }
         if(event.target.classList.contains("multiply")){
-                operation += '*';
-                console.log(operation); //auch für % rechnen 
+                // operation += '*';
+                multiple = multiple.replace('x', '*');
+                operation += multiple;
+                console.log(operation);
                 return;
         }
-        operation += event.target.innerText; //
+        if(event.target.classList.contains("division")){
+                operation += '÷';
+                console.log(operation);
+                return;
+        }
+        if(event.target.classList.contains("decimal")){
+                operation += '.';
+                console.log(operation);
+                return;
+        }
+        if(event.target.classList.contains("percent")){
+                operation += '*0.01';
+                alert("How to use the % calculator: Multiply the numbers first. Then add a % to the last number.")
+                console.log(operation);
+                return;
+        }
+        if(event.target.classList.contains("result")){
+                // operation = new Function(`return ${operation}`)(result);
+                operation = new Function(`return ${operation.calculation}`)(result);
+                result = operation;
+                return;
+        }
+        operation += event.target.innerText;
         console.log(operation);
 }
-
 //display update-show window
 function updateDisplay(){ 
-        displayOperation.innerText = operation;
+        displayOperation.innerText = operation.display; 
         displayResult.innerText = result;
 }
-
-//handle key press: number press->calculate
-//calculate function
-// const keys = document.querySelectorAll(".calc-btn");
-// keys.addEventListener("click", (event)=>{
-//         const {target} = event;
-// });
-
-//calculator function
-// const numbers = document.querySelectorAll('.num');
-// const operator = document.querySelectorAll('.operator');
-
-// const keys = document.querySelector(".num");
-// keys.addEventListener("click", ())
-
-// function calculate(n1, operator, n2) {
-//         let result = 0;
-//         n1 = parseInt(n1);
-//         n2 = parseInt(n2)
-//         if (operator === "*") {
-//                 result = n1 * n2;
-//         }
-//         else if (operator === "-") {
-//                 result = n1 - n2;
-//         }
-//         else if (operator === "+") {
-//                 result = n1 + n2;
-//         }
-//         else if (operator === "/") {
-//                 result = n1 / n2;
-//         }
-//         else {
-//                 result = "error"
-//         } 
-//         return result;
-// }
