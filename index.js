@@ -1,7 +1,7 @@
 const display = document.querySelector(".display");
 const displayOperation = display.querySelector(".display__operation");
 const displayResult = display.querySelector(".display__result");
-let operation = ''
+let operation = '';
 
 // var operators = document.getElementsByClassName('operator');
 
