@@ -19,14 +19,18 @@ h1 {
 
 .background-calc {
   background-color: #c7c7c7;
-  width: 80%;
   margin: auto;
   padding: 0.3rem;
   border-radius: 4px;
 }
+@media only screen and (min-width: 576px) {
+  .background-calc {
+    width: 65%;
+  }
+}
 @media only screen and (min-width: 992px) {
   .background-calc {
-    width: 50%;
+    width: 45%;
   }
 }
 @media only screen and (min-width: 1992px) {
@@ -35,11 +39,17 @@ h1 {
   }
 }
 .background-calc .display {
-  font-size: 50px;
-  padding: 20px 5px;
+  font-size: 30px;
+  padding: 10px 5px;
   display: block;
-  height: 120px;
   text-align: right;
+}
+@media only screen and (min-width: 992px) {
+  .background-calc .display {
+    font-size: 50px;
+    padding: 20px 5px;
+    height: 120px;
+  }
 }
 
 h4 {
@@ -48,18 +58,14 @@ h4 {
 }
 
 .grid-calc {
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.3rem;
 }
 
-.grid-btn {
-  padding-bottom: 0.2rem;
-}
-
 .calc-btn {
-  height: 7.5rem;
-  width: 24%;
-  font-size: 1.5rem;
+  height: 4rem;
+  font-size: 1rem;
   font-weight: bold;
   border-style: hidden;
   background-color: white;
@@ -74,7 +80,8 @@ h4 {
 }
 @media only screen and (min-width: 992px) {
   .calc-btn {
-    height: 5rem;
+    height: 5.5rem;
+    font-size: 1.5rem;
   }
 }
 

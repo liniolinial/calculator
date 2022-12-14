@@ -21,23 +21,29 @@ h1 {
 
 .background-calc {
   background-color: darken($color: vars.$white, $amount: 22);
-  width: 80%;
   margin: auto;
   padding: 0.3rem;
   border-radius: 4px;
+  @include respondMin(vars.$breakpoints-tablet) {
+    width: 65%;
+  }
   @include respondMin(vars.$breakpoints-laptop) {
-    width: 50%;
+    width: 45%;
   }
   @include respondMin(vars.$breakpoints-desktop) {
     width: 35%;
   }
   .display {
-    font-size: 50px;
-    padding: 20px 5px;
+    font-size: 30px;
+    padding: 10px 5px;
     display: block;
     // white-space: wrap;
-    height: 120px;
     text-align: right;
+    @include respondMin(vars.$breakpoints-laptop) {
+      font-size: 50px;
+      padding: 20px 5px;
+      height: 120px;
+    }
   }
 }
 
@@ -46,39 +52,20 @@ h4 {
   padding-left: 0.5rem;
 }
 
-// .display,
-// .display2 {
-//   text-align: right;
-//   display: block;
-//   width: -webkit-fill-available;
-// }
-
-// .display {
-//   font-size: 50px;
-//   padding: 20px 5px;
-//   display: block;
-//   // height: ;
-//   text-align: right;
-// }
-
 .grid-calc {
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.3rem;
 }
 
-.grid-btn {
-  padding-bottom: 0.2rem;
-}
-
 .calc-btn {
-  height: 7.5rem;
-  width: 24%;
-  font-size: 1.5rem;
+  height: 4rem;
+  font-size: 1rem;
   font-weight: bold;
   border-style: hidden;
   background-color: vars.$white;
   &:hover {
-    background-color: darken($color: white, $amount: 15);
+    background-color: darken($color: vars.$white, $amount: 15);
     transition: 50ms;
   }
   &:active {
@@ -86,7 +73,8 @@ h4 {
     transition: 50ms;
   }
   @include respondMin(vars.$breakpoints-laptop) {
-    height: 5rem;
+    height: 5.5rem;
+    font-size: 1.5rem;
   }
 }
 
