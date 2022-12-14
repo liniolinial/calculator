@@ -4,9 +4,8 @@ const displayResult = display.querySelector(".display__result");
 let operation = '';
 let result = '';
 
-
 //Calculator buttonHover, click
-var buttons = document.querySelectorAll(".calc-btn");
+let buttons = document.querySelectorAll(".calc-btn");
 console.log("buttons", buttons);
 buttons.forEach(button => {
         button.addEventListener("click", function(event) {
@@ -71,7 +70,7 @@ function buttonPress(event){
         //         return;
         // }
 
-        if(event.target.dataset.buttonOperation === "result"){ // hier auch was ändern
+        if(event.target.dataset.buttonOperation === "result"){
                 operation = new Function(`return ${operation}`)(result);
                 result = operation;
                 return;
