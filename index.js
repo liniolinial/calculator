@@ -2,14 +2,8 @@ const display = document.querySelector(".display");
 const displayOperation = display.querySelector(".display__operation");
 const displayResult = display.querySelector(".display__result");
 let operation = '';
-
-// var operators = document.getElementsByClassName('operator');
-
-
 let result = '';
-// var coma = ',';
-// var multiple = 'x';
-// var division = '÷';
+
 
 //Calculator buttonHover, click
 var buttons = document.querySelectorAll(".calc-btn");
@@ -32,50 +26,61 @@ function buttonPress(event){
         if (!event.target.matches("button")){
                 return;
         }
-        if(event.target.classList.contains("AC")){
+
+        if(event.target.dataset.buttonRemove === "AC"){
                 operation = '';
                 result = '';
                 return;
         }
-        if(event.target.classList.contains("delete")){
+        if(event.target.dataset.buttonRemove === "delete"){
                 operation = operation.substr(0, operation.length-1);
                 result = '';
                 return;
         }
-        if(event.target.classList.contains("multiply")){
-                operation += '*';
-                // multiple = multiple.replace('x', '*');
-                // operation += multiple;
-                console.log(operation);
-                return;
-        }
-        if(event.target.classList.contains("division")){
-                operation += '÷';
-                console.log(operation);
-                return;
-        }
-        if(event.target.classList.contains("decimal")){
-                operation += '.';
-                console.log(operation);
-                return;
-        }
-        if(event.target.classList.contains("percent")){
-                operation += '*0.01';
-                alert("How to use the % calculator: Multiply the numbers first. Then add a % to the last number.")
-                console.log(operation);
-                return;
-        }
-        if(event.target.classList.contains("result")){
-                // operation = new Function(`return ${operation}`)(result);
+        // if(event.target.classList.contains("multiply")){
+        //         operation += '*';
+        //         // multiple = multiple.replace('x', '*');
+        //         // operation += multiple;
+        //         console.log(operation);
+        //         return;
+        // }
+        // if(event.target.classList.contains("division")){
+        //         operation += '/';
+        //         console.log(operation);
+        //         return;
+        // }
+        // if(event.target.classList.contains("plus")){
+        //         operation += '+';
+        //         console.log(operation);
+        //         return;
+        // }
+        // if(event.target.classList.contains("minus")){
+        //         operation += '-';
+        //         console.log(operation);
+        //         return;
+        // }
+        // if(event.target.classList.contains("decimal")){
+        //         operation += '.';
+        //         console.log(operation);
+        //         return;
+        // }
+        // if(event.target.classList.contains("percent")){
+        //         operation += '*0.01';
+        //         alert("How to use the % calculator: Multiply the numbers first. Then add a % to the last number.")
+        //         console.log(operation);
+        //         return;
+        // }
+
+        if(event.target.dataset.buttonOperation === "result"){ // hier auch was ändern
                 operation = new Function(`return ${operation}`)(result);
                 result = operation;
                 return;
         }
-        operation += event.target.innerText;
+        operation += event.target.dataset.buttonOperation;
         console.log(operation);
 }
-//display update-show window
-function updateDisplay(){ 
-        displayOperation.innerText = operation; 
-        displayResult.innerText = result;
+// display update-show window
+function updateDisplay(){
+        displayOperation.innerText= operation;
+        displayResult.innerText= result;
 }
