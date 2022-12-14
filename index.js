@@ -32,7 +32,7 @@ function buttonPress(event){
                 result = '';
                 return;
         }
-        if(event.target.dataset.buttonRemove === "delete"){
+        if(event.target.dataset.buttonRemove === "DEL"){
                 operation = operation.substr(0, operation.length-1);
                 result = '';
                 return;
