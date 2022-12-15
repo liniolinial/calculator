@@ -1,6 +1,7 @@
 body {
   background-color: #393e46;
   text-align: center;
+  margin: 0;
 }
 
 h1 {
@@ -17,51 +18,50 @@ h1 {
   }
 }
 
-.background-calc {
-  background-color: #c7c7c7;
-  margin: auto;
-  padding: 0.3rem;
-  border-radius: 4px;
-}
-@media only screen and (min-width: 576px) {
-  .background-calc {
-    width: 65%;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .background-calc {
-    width: 45%;
-  }
-}
-@media only screen and (min-width: 1992px) {
-  .background-calc {
-    width: 35%;
-  }
-}
-.background-calc .display {
-  font-size: 30px;
-  padding: 10px 5px;
-  display: block;
-  height: 80px;
-  text-align: right;
-}
-@media only screen and (min-width: 992px) {
-  .background-calc .display {
-    font-size: 50px;
-    padding: 20px 5px;
-    height: 120px;
-  }
-}
-
-h4 {
-  text-align: left;
-  padding-left: 0.5rem;
-}
-
 .grid-calc {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.3rem;
+  padding: 0.4rem;
+  margin: auto;
+  background-color: #c7c7c7;
+  width: 100%;
+  border-radius: 4px;
+}
+@media only screen and (min-width: 576px) {
+  .grid-calc {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid-calc {
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 1992px) {
+  .grid-calc {
+    width: 35%;
+  }
+}
+.grid-calc h4 {
+  text-align: left;
+  padding-left: 0.5rem;
+  grid-column: span 4;
+}
+
+.display {
+  font-size: 30px;
+  padding: 10px 5px;
+  grid-column: span 4;
+  height: 80px;
+  text-align: right;
+}
+@media only screen and (min-width: 992px) {
+  .display {
+    font-size: 50px;
+    padding: 20px 5px;
+    height: 120px;
+  }
 }
 
 .calc-btn {
@@ -69,6 +69,7 @@ h4 {
   font-size: 1rem;
   font-weight: bold;
   border-style: hidden;
+  border-radius: 4px;
   background-color: white;
 }
 .calc-btn:hover {
