@@ -37,6 +37,7 @@ h1 {
     font-size: 30px;
     padding: 10px 5px;
     display: block;
+    height: 80px;
     // white-space: wrap;
     text-align: right;
     @include respondMin(vars.$breakpoints-laptop) {
@@ -83,7 +84,7 @@ h4 {
   background-color: darken($color: vars.$white, $amount: 15);
 }
 
-.result {
+.result-btn {
   background-color: rgb(133, 181, 229);
   &:hover {
     background-color: rgb(51, 143, 241);

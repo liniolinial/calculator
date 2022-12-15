@@ -1,11 +1,15 @@
 const display = document.querySelector(".display");
 const displayOperation = display.querySelector(".display__operation");
 const displayResult = display.querySelector(".display__result");
-let operation = '';
-let result = '';
+// let operation = {
+//         displayValue: "",
+//         calculation: calculation += dataset.buttonOperation
+// };
+let operation = "";
+let result = "";
 
 //Calculator buttonHover, click
-let buttons = document.querySelectorAll(".calc-btn");
+const buttons = document.querySelectorAll(".calc-btn");
 console.log("buttons", buttons);
 buttons.forEach(button => {
         button.addEventListener("click", function(event) {
@@ -25,7 +29,6 @@ function buttonPress(event){
         if (!event.target.matches("button")){
                 return;
         }
-
         if(event.target.dataset.buttonRemove === "AC"){
                 operation = '';
                 result = '';

@@ -42,6 +42,7 @@ h1 {
   font-size: 30px;
   padding: 10px 5px;
   display: block;
+  height: 80px;
   text-align: right;
 }
 @media only screen and (min-width: 992px) {
@@ -90,13 +91,13 @@ h4 {
   background-color: #d9d9d9;
 }
 
-.result {
+.result-btn {
   background-color: rgb(133, 181, 229);
 }
-.result:hover {
+.result-btn:hover {
   background-color: rgb(51, 143, 241);
 }
-.result:active {
+.result-btn:active {
   background-color: rgb(40, 117, 199);
   transition: 50ms;
 }
