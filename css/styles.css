@@ -18,7 +18,7 @@ h1 {
   }
 }
 
-.grid-calc {
+.calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.3rem;
@@ -29,21 +29,21 @@ h1 {
   border-radius: 4px;
 }
 @media only screen and (min-width: 576px) {
-  .grid-calc {
+  .calculator {
     width: 65%;
   }
 }
 @media only screen and (min-width: 992px) {
-  .grid-calc {
+  .calculator {
     width: 45%;
   }
 }
 @media only screen and (min-width: 1992px) {
-  .grid-calc {
+  .calculator {
     width: 35%;
   }
 }
-.grid-calc h4 {
+.calculator h4 {
   text-align: left;
   padding-left: 0.5rem;
   grid-column: span 4;
