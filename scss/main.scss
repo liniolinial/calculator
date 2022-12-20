@@ -1,11 +1,13 @@
 //dependencies
 @use "variables" as vars;
 @use "mixins" as *;
+@use "fonts" as fonts;
 
 body {
   background-color: #393e46;
   text-align: center;
   margin: 0;
+  font-family: vars.$font-text;
 }
 
 h1 {
@@ -95,4 +97,9 @@ h1 {
     background-color: rgb(40, 117, 199);
     transition: 50ms;
   }
+}
+
+p {
+  font-size: 20px;
+  color: vars.$white;
 }

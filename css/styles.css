@@ -1,12 +1,48 @@
+/* lobster-regular - latin */
+@font-face {
+  font-family: "Lobster";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/lobster-v28-latin-regular.woff2") format("woff2"), url("../fonts/lobster-v28-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* chivo-regular - latin */
+@font-face {
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/chivo-v18-latin-regular.woff2") format("woff2"), url("../fonts/chivo-v18-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* chivo-700 - latin */
+@font-face {
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/chivo-v18-latin-700.woff2") format("woff2"), url("../fonts/chivo-v18-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* chivo-italic - latin */
+@font-face {
+  font-family: "Chivo";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/chivo-v18-latin-italic.woff2") format("woff2"), url("../fonts/chivo-v18-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* chivo-700italic - latin */
+@font-face {
+  font-family: "Chivo";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/chivo-v18-latin-700italic.woff2") format("woff2"), url("../fonts/chivo-v18-latin-700italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 body {
   background-color: #393e46;
   text-align: center;
   margin: 0;
+  font-family: "Chivo";
 }
 
 h1 {
   margin: 10px;
-  font-family: "Lobster", cursive;
+  font-family: "Lobster";
   text-shadow: 5px 0 #232931;
   font-size: 4rem;
   color: #4ecca3;
@@ -101,6 +137,11 @@ h1 {
 .result-btn:active {
   background-color: rgb(40, 117, 199);
   transition: 50ms;
+}
+
+p {
+  font-size: 20px;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

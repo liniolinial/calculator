@@ -3,8 +3,9 @@ const displayOperation = display.querySelector(".display__operation");
 const displayScreen = display.querySelector(".display__screen");
 const displayResult = display.querySelector(".display__result");
 
+
 let operation = "";
-let screen = "";
+let screen = ""; 
 let result = "";
 
 //Calculator buttonHover, click
@@ -25,6 +26,7 @@ buttons.forEach(button => {
 //button click
 function buttonPress(event){
         if (!event.target.matches("button")){
+
                 return;
         }
         if(event.target.dataset.buttonRemove === "AC"){
@@ -84,6 +86,11 @@ function buttonPress(event){
                 console.log(operation);
                 return;
         }
+        // frühere result if kondition weg und probiere mit einzelen separaten operation funktion ohne new funktion.
+        // if(event.target.dataset.buttonOperation === "result"){
+        //         //zahl operator zahl2 = result
+        //         //welcher operator gedruckt wurde
+        // }
         operation += event.target.dataset.buttonOperation;
         screen += event.target.dataset.buttonOperation;
         console.log(operation);
@@ -97,6 +104,12 @@ function buttonPress(event){
 
 // display update-show window
 function updateDisplay(){
+        //number/string
+
+        // console.log(typeof screen);
+        // console.log(parseInt(screen));
+        // displayOperation.innerText = operation;
         displayScreen.innerText = screen;  //parseInt(screen,10)
+        console.log(typeof result);
         displayResult.innerText= result.toLocaleString("de-DE");   //parseInt(result,10)
 }
