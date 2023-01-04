@@ -38,7 +38,7 @@ h1 {
     width: 45%;
   }
   @include respondMin(vars.$breakpoints-desktop) {
-    width: 35%;
+    width: 30%;
   }
 
   h4 {
